@@ -1,0 +1,42 @@
+:root {
+  --color-brown: #873B21;
+  --color-orange: #CD754D;
+  --color-white: #F7E7D7;
+  --color-grey: #BFCFCC;
+  --color-green: #5D777A;
+  --color-blue: #2C3845; 
+  --min-large-width: 600px;
+  font-family: "Sono", monospace;
+}
+
+body {
+  background-color: var(--color-blue);
+  height: 100vh;
+  margin: 0;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Remove spinners in Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove spinners in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+button, label {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+}

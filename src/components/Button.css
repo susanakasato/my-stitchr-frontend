@@ -1,0 +1,82 @@
+.button {
+    width: 60%;
+    border: 1px solid;
+    border-radius: 10px;
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    box-shadow: 2px 2px 2px var(--color-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:hover {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.button:active {
+    box-shadow: none;
+}
+
+.button-link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.brown{
+    background-color: var(--color-brown);
+    color: var(--color-white);
+    border-color: var(--color-orange);
+}
+
+.orange{
+    background-color: var(--color-orange);
+    color: var(--color-blue);
+    border-color: var(--color-brown);
+}
+
+.white{
+    background-color: var(--color-white);
+    color: var(--color-blue);
+    border-color: var(--color-orange)
+}
+
+.grey{
+    background-color: var(--color-grey);
+    color: var(--color-blue);
+    border-color: var(--color-green);
+}
+
+.green{
+    background-color: var(--color-green);
+    color: var(--color-blue);
+    border-color: var(--color-blue);
+}
+
+.blue{
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    border-color: var(--color-green);
+}
+
+.small {
+    width: 100px;
+}
+
+.big {
+    width: 60%;
+}
+
+@media (min-width: 600px) {
+    .big {
+        width: 264px;
+    }
+
+    .small {
+        width: 100px;
+    }
+}

@@ -1,0 +1,7 @@
+.image-input-label {
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

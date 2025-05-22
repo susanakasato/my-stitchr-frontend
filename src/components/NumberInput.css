@@ -1,0 +1,18 @@
+.number-input {
+    background-color: transparent;
+    width: 80px;
+    border: none;
+    border-bottom: solid 2px var(--color-orange);
+    text-align: center;
+    outline-style: none;
+}
+
+.number-input-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.number-input-label {
+    font-size: 12px;
+}

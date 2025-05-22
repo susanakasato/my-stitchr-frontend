@@ -1,0 +1,18 @@
+.back-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.back-button-label {
+    align-content: center;
+}
+
+#image-container {
+    box-sizing: border-box;
+    border: 1px solid var(--color-orange);
+}
+
+.crop-image {
+    max-height: 40vh;
+}
