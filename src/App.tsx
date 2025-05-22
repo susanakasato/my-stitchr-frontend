@@ -7,7 +7,7 @@ import ImageProvider from './contexts/ImageContext';
 function App() {
   return <BrowserRouter>
     <div id="body-container">
-      <Link to="/" id="title-container">My Kraft</Link>
+      <Link to="/" id="title-container">My Stitchr</Link>
       <div id="content-container">
         <ImageProvider>
           <Routes>
