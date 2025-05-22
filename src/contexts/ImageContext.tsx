@@ -12,7 +12,7 @@ const ImageContext = createContext<{
     setOriginalImage: () => {}
 });
 
-export function ImageProvider(props: {children: any}) {
+const ImageProvider: React.FC<{children: any}> = (props) => {
     const [image, setImageState] = useState<Blob>(new Blob());
     const [originalImage, setOriginalImageState] = useState<Blob>(new Blob());
 
@@ -29,6 +29,8 @@ export function ImageProvider(props: {children: any}) {
     </ImageContext.Provider>
 }
 
-export function useImage() {
+export const useImage = () => {
     return useContext(ImageContext);
 }
+
+export default ImageProvider;

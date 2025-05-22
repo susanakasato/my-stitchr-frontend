@@ -1,5 +1,5 @@
 import "./Home.css";
-import { PatternService } from "../services/PatternService";
+import PatternService from "../services/PatternService";
 import Button from "../components/Button";
 import SizeContainer from "../components/SizeContainer";
 import SubContainer from "../components/SubContainer";
@@ -11,10 +11,11 @@ import CropIcon from "@mui/icons-material/Crop";
 import ResetIcon from "@mui/icons-material/RestartAlt";
 import EditIcon from "@mui/icons-material/Edit";
 import DownloadIcon from "@mui/icons-material/Download";
+import Modal from "../components/Modal";
 
 const stitchMax = 1000;
 
-function Home() {
+const Home: React.FC = () => {
     const imageContext = useImage();
     const [previewImage, setPreviewImage] = useState("");
     const [stitchCount, setStitchCount] = useState({
@@ -24,6 +25,7 @@ function Home() {
     const [stitchRatio, setStitchRatio] = useState(0);
     const [pdfUrl, setPdfUrl] = useState("");
     const [isGenerating, setIsGenerating] = useState(false);
+    const [error, setError] = useState("");
 
     useEffect(() => {
         if (imageContext.image.size == 0) {
@@ -68,13 +70,22 @@ function Home() {
     const onClickGeneratePattern = async () => {
         setIsGenerating(true);
         setPdfUrl("");
-        const pdfBlob: Blob = await PatternService.generatePatterm(imageContext.image, {width: stitchCount.width, height: stitchCount.height});
-        setPdfUrl(URL.createObjectURL(pdfBlob));
-        setIsGenerating(false);
+        try {
+            const pdfBlob: Blob = await PatternService.generatePattern(imageContext.image, {width: stitchCount.width, height: stitchCount.height});
+            setPdfUrl(URL.createObjectURL(pdfBlob));
+        } catch (e) {
+            setError("Sorry! Something went wrong. Try again later.")
+        } finally {
+            setIsGenerating(false);
+        }
     }
 
     const onClickDownload = () => {
         window.open(pdfUrl);
+    }
+
+    const onClickCloseErrorModal = () => {
+        setError("");
     }
 
     return <>
@@ -128,6 +139,11 @@ function Home() {
                 <span>DOWNLOAD</span>
         </Button>}
         </>)}
+        {!!error && (
+            <Modal id="error-modal" title="Warning!" closeModalHandler={onClickCloseErrorModal}>
+                <p>{error}</p>
+            </Modal>
+        )}
     </>
 }
 

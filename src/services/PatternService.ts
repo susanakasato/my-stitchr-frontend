@@ -16,7 +16,6 @@ const generatePattern = async (image: Blob, size: {width: number, height: number
     }
 }
 
-
-export const PatternService = {
-    generatePatterm: generatePattern
-};
+export default {
+    generatePattern: generatePattern
+}

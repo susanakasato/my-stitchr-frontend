@@ -1,13 +1,13 @@
 import "./UploadInput.css";
 import "./Button.css";
-import { useEffect, useState, type ChangeEvent, type ChangeEventHandler } from "react";
+import { type ChangeEvent, type ChangeEventHandler } from "react";
 import { useImage } from "../contexts/ImageContext";
 import UploadIcon from "@mui/icons-material/Upload";
 
 
-function UploadInput(props: {
+const UploadInput: React.FC<{
     size: "small" | "big"
-}) {
+}> = (props) => {
     const imageContext = useImage();
 
     const handleFileChange: ChangeEventHandler<HTMLInputElement> = (e: ChangeEvent<HTMLInputElement>) => {

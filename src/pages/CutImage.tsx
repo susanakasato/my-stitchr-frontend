@@ -12,7 +12,7 @@ import { getCroppedBlob } from "../Utils";
 import UploadInput from "../components/UploadInput";
 import CheckIcon from "@mui/icons-material/Check";
 
-function CutImage() {
+const CutImage: React.FC = () => {
     const imageContext = useImage();
     const [imageSrc, setImageSrc] = useState("");
     const [crop, setCrop] = useState<Crop>({

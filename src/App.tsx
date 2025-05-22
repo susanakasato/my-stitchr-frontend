@@ -2,7 +2,7 @@ import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import './App.css'
 import Home from './pages/Home';
 import CutImage from './pages/CutImage';
-import { ImageProvider } from './contexts/ImageContext';
+import ImageProvider from './contexts/ImageContext';
 
 function App() {
   return <BrowserRouter>

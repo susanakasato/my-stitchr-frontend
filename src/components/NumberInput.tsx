@@ -1,12 +1,12 @@
 import type { ChangeEvent, ChangeEventHandler } from "react";
 import "./NumberInput.css";
 
-function NumberInput(props: {
+const NumberInput: React.FC<{
     label: string,
     value: number,
     onChange: ChangeEventHandler<HTMLInputElement>,
     max?: number
-}) {
+}> = (props) => {
     return <div className="number-input-control">
         <input 
             className="number-input" 
