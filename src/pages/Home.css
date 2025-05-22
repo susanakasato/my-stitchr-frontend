@@ -9,8 +9,8 @@
 }
 
 .preview-image {
-    max-width: 40vw;
-    max-height: 30vh;
+    max-width: 40dvw;
+    max-height: 30dvh;
     margin: 5px 0;
 }
 
