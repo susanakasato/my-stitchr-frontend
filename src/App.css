@@ -1,5 +1,8 @@
 #body-container {
   background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #title-container {
@@ -7,6 +10,7 @@
   display: flex;
   justify-content: center;
   height: 50px;
+  width: 100%;
   align-items: center;
   font-size: 30px;
   font-weight: 700;
@@ -15,10 +19,9 @@
 }
 
 #content-container {
-  height: calc(100vh - 50px);
+  height: calc(100dvh - 50px);
   overflow-y: auto;
   width: 80%;
-  justify-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
